@@ -1,0 +1,13 @@
+{
+    "request": {
+        "mbean": "java.lang:type=Memory",
+        "attribute": "HeapMemoryUsage",
+        "type": "read"
+    },
+    "value": {
+        "max": 477102080,
+        "committed": 366477312,
+        "init": 402653184,
+        "used": 155048016
+    }
+}

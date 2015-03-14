@@ -1,0 +1,66 @@
+{
+    "scriptId":  { "name": "com.mycompany.CheckJvmAndEnv",
+                   "version": "1.0.0" },
+    "meta": {
+        "description": "a mixture of JVM and OS checks. Use at your own risk ...",
+        "author": "It could be you",
+        "supportLink": "http://my.support.wiki/kb/healthcheck/com.mycompany.CheckJvmAndEnv"        
+    },
+    "vars": {
+        "checkSwapSpaceThreshold": 0.5,
+        "checkSystemLoadThreshold": 1.0
+    }, 
+    "collectionItems": [
+               {
+                   "var": "heap",
+                   "type": "read",
+                   "mbean": "java.lang:type=Memory",
+                   "attribute": "HeapMemoryUsage"
+               },
+               {
+                   "var": "os",
+                   "type": "read",
+                   "mbean": "java.lang:type=OperatingSystem",
+                   "attributes": [
+                       "FreeSwapSpaceSize",
+                       "TotalSwapSpaceSize",
+                       "SystemCpuLoad",
+                       "AvailableProcessors"
+                   ]
+               },
+               {
+                   "var": "someOperation",
+                   "type": "exec",
+                   "mbean": "com.mycompany:type=Something",
+                   "operation": "someOperation"
+               }
+   ],
+   "assertions": [
+               {
+                   "name": "checkSwapSpace",
+                   "check": "1 - (os.FreeSwapSpaceSize / os.TotalSwapSpaceSize) > checkSwapSpaceThreshold ?: 0.5",
+                   "descriptionExpr": "collectionId + ' assertion ' + assertion.name + ' failed as check: ' + assertion.check + ' resolves to: ' + assertion.result + ' (meaning that more than half of the swap space has been consumed already). See ' + meta.supportLink + '#checkSwapSpace for further infos or contact: ' + meta.author"
+               },
+               {
+                   "name": "checkSystemLoad",
+                   "check": "os.SystemCpuLoad / os.AvailableProcessors > checkSystemLoadThreshold ?: 1.0",
+                   "descriptionExpr": "collectionId + ' assertion ' + currentAssertion.id + ' failed as check: ' + currentAssertion.check + ' resolves to: ' + currentAssertion.result + ' (meaning that the load on each processor is higher than 1.5). See ' + meta.supportLink + '#checkSystemLoad for further infos or contact: ' + meta.author"
+               },
+               {
+                   "name": "heapMemoryUsage",
+                   "check": "heap.used / heap.max > heapMemoryUsageThreshold ?: 0.85",
+                   "descriptionExpr": "collectionId + ' assertion ' + currentAssertion.id + ' failed as check: ' + currentAssertion.check + ' resolves to: ' + currentAssertion.result + ' (meaning that more than 85% of the heap is used). See ' + meta.supportLink + '#heapMemoryUsage for further infos or contact: ' + meta.author"
+               }
+           ],
+   "conditional": {
+               "check" : "info.product.toLowerCase() == 'tomcat' && info.version.substring(0,1) == '7'",
+               "description" : "Check that the Tomcat Version is 7.",
+               "collectionItems": [
+                     {
+                        "var": "info",
+                        "type": "version",
+                        "path": "info"
+                     }
+                ]
+       }
+}

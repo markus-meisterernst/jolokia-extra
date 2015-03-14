@@ -1,0 +1,262 @@
+{
+    "request": {
+        "path": "java.lang/type=Threading",
+        "type": "list"
+    },
+    "value": {
+        "desc": "Information on the management interface of the MBean",
+        "op": {
+            "findDeadlockedThreads": {
+                "ret": "[J",
+                "desc": "findDeadlockedThreads",
+                "args": []
+            },
+            "findMonitorDeadlockedThreads": {
+                "ret": "[J",
+                "desc": "findMonitorDeadlockedThreads",
+                "args": []
+            },
+            "resetPeakThreadCount": {
+                "ret": "void",
+                "desc": "resetPeakThreadCount",
+                "args": []
+            },
+            "getThreadUserTime": [
+                {
+                    "ret": "[J",
+                    "desc": "getThreadUserTime",
+                    "args": [{
+                        "desc": "p0",
+                        "name": "p0",
+                        "type": "[J"
+                    }]
+                },
+                {
+                    "ret": "long",
+                    "desc": "getThreadUserTime",
+                    "args": [{
+                        "desc": "p0",
+                        "name": "p0",
+                        "type": "long"
+                    }]
+                }
+            ],
+            "getThreadInfo": [
+                {
+                    "ret": "[Ljavax.management.openmbean.CompositeData;",
+                    "desc": "getThreadInfo",
+                    "args": [{
+                        "desc": "p0",
+                        "name": "p0",
+                        "type": "[J"
+                    }]
+                },
+                {
+                    "ret": "javax.management.openmbean.CompositeData",
+                    "desc": "getThreadInfo",
+                    "args": [
+                        {
+                            "desc": "p0",
+                            "name": "p0",
+                            "type": "long"
+                        },
+                        {
+                            "desc": "p1",
+                            "name": "p1",
+                            "type": "int"
+                        }
+                    ]
+                },
+                {
+                    "ret": "[Ljavax.management.openmbean.CompositeData;",
+                    "desc": "getThreadInfo",
+                    "args": [
+                        {
+                            "desc": "p0",
+                            "name": "p0",
+                            "type": "[J"
+                        },
+                        {
+                            "desc": "p1",
+                            "name": "p1",
+                            "type": "int"
+                        }
+                    ]
+                },
+                {
+                    "ret": "[Ljavax.management.openmbean.CompositeData;",
+                    "desc": "getThreadInfo",
+                    "args": [
+                        {
+                            "desc": "p0",
+                            "name": "p0",
+                            "type": "[J"
+                        },
+                        {
+                            "desc": "p1",
+                            "name": "p1",
+                            "type": "boolean"
+                        },
+                        {
+                            "desc": "p2",
+                            "name": "p2",
+                            "type": "boolean"
+                        }
+                    ]
+                },
+                {
+                    "ret": "javax.management.openmbean.CompositeData",
+                    "desc": "getThreadInfo",
+                    "args": [{
+                        "desc": "p0",
+                        "name": "p0",
+                        "type": "long"
+                    }]
+                }
+            ],
+            "dumpAllThreads": {
+                "ret": "[Ljavax.management.openmbean.CompositeData;",
+                "desc": "dumpAllThreads",
+                "args": [
+                    {
+                        "desc": "p0",
+                        "name": "p0",
+                        "type": "boolean"
+                    },
+                    {
+                        "desc": "p1",
+                        "name": "p1",
+                        "type": "boolean"
+                    }
+                ]
+            },
+            "getThreadAllocatedBytes": [
+                {
+                    "ret": "[J",
+                    "desc": "getThreadAllocatedBytes",
+                    "args": [{
+                        "desc": "p0",
+                        "name": "p0",
+                        "type": "[J"
+                    }]
+                },
+                {
+                    "ret": "long",
+                    "desc": "getThreadAllocatedBytes",
+                    "args": [{
+                        "desc": "p0",
+                        "name": "p0",
+                        "type": "long"
+                    }]
+                }
+            ],
+            "getThreadCpuTime": [
+                {
+                    "ret": "[J",
+                    "desc": "getThreadCpuTime",
+                    "args": [{
+                        "desc": "p0",
+                        "name": "p0",
+                        "type": "[J"
+                    }]
+                },
+                {
+                    "ret": "long",
+                    "desc": "getThreadCpuTime",
+                    "args": [{
+                        "desc": "p0",
+                        "name": "p0",
+                        "type": "long"
+                    }]
+                }
+            ]
+        },
+        "attr": {
+            "ThreadContentionMonitoringSupported": {
+                "desc": "ThreadContentionMonitoringSupported",
+                "type": "boolean",
+                "rw": false
+            },
+            "SynchronizerUsageSupported": {
+                "desc": "SynchronizerUsageSupported",
+                "type": "boolean",
+                "rw": false
+            },
+            "ThreadAllocatedMemoryEnabled": {
+                "desc": "ThreadAllocatedMemoryEnabled",
+                "type": "boolean",
+                "rw": true
+            },
+            "ThreadCpuTimeEnabled": {
+                "desc": "ThreadCpuTimeEnabled",
+                "type": "boolean",
+                "rw": true
+            },
+            "PeakThreadCount": {
+                "desc": "PeakThreadCount",
+                "type": "int",
+                "rw": false
+            },
+            "CurrentThreadCpuTime": {
+                "desc": "CurrentThreadCpuTime",
+                "type": "long",
+                "rw": false
+            },
+            "DaemonThreadCount": {
+                "desc": "DaemonThreadCount",
+                "type": "int",
+                "rw": false
+            },
+            "CurrentThreadCpuTimeSupported": {
+                "desc": "CurrentThreadCpuTimeSupported",
+                "type": "boolean",
+                "rw": false
+            },
+            "TotalStartedThreadCount": {
+                "desc": "TotalStartedThreadCount",
+                "type": "long",
+                "rw": false
+            },
+            "AllThreadIds": {
+                "desc": "AllThreadIds",
+                "type": "[J",
+                "rw": false
+            },
+            "ThreadContentionMonitoringEnabled": {
+                "desc": "ThreadContentionMonitoringEnabled",
+                "type": "boolean",
+                "rw": true
+            },
+            "ObjectMonitorUsageSupported": {
+                "desc": "ObjectMonitorUsageSupported",
+                "type": "boolean",
+                "rw": false
+            },
+            "ObjectName": {
+                "desc": "ObjectName",
+                "type": "javax.management.ObjectName",
+                "rw": false
+            },
+            "ThreadAllocatedMemorySupported": {
+                "desc": "ThreadAllocatedMemorySupported",
+                "type": "boolean",
+                "rw": false
+            },
+            "ThreadCount": {
+                "desc": "ThreadCount",
+                "type": "int",
+                "rw": false
+            },
+            "CurrentThreadUserTime": {
+                "desc": "CurrentThreadUserTime",
+                "type": "long",
+                "rw": false
+            },
+            "ThreadCpuTimeSupported": {
+                "desc": "ThreadCpuTimeSupported",
+                "type": "boolean",
+                "rw": false
+            }
+        }
+    }
+}

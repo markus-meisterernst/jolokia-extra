@@ -1,0 +1,31 @@
+{
+    "scriptId":  { "name": "org.jolokia.extra.addon.scripting.test.VersionTest",
+                   "version": "1.0.0" },
+    "meta": {
+        "description": "check version call through BackendManager",
+        "author": "MM"
+    },
+    "vars": {},        
+    "collectionItems": [
+               {
+                   "var": "version",
+                   "type": "version"
+               }
+    ],
+   "assertions": [ {
+        "name" : "versionAssertion", 
+        "check": "version.info.vendor == 'clipse'",
+        "descriptionExpr" : "scriptId.toString() + ' assertion ' + assertion.name + ' failed. it checks that the actual vendor is Eclipse: ' + assertion.check"
+     }
+   ],
+   "conditional": {
+               "check" : "version.info.product.toLowerCase() == 'jetty' && version.info.version.substring(0,1) == '7'",
+               "description" : "Check that the Jetty Version is 7.",
+               "collectionItems": [
+                     {
+                        "var": "version",
+                        "type": "version"
+                     }
+                ]
+       }
+}

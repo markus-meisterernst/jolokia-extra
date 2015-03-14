@@ -1,0 +1,18 @@
+{
+    "timestamp": 1425403414,
+    "status": 200,
+    "request": {
+        "operation": "executeScript",
+        "mbean": "jolokia-extra:type=ScriptManager",
+        "arguments": [
+            "org.jolokia.extra.addon.scripting.test.VersionTest",
+            "1.0.0"
+        ],
+        "type": "exec"
+    },
+    "value": { "heapMemoryUsageAssertion": {
+        "check": "new('java.lang.Double', heap.used) div new('java.lang.Double', heap.max) < heapMemoryUsageThreshold",
+        "status": "FAILED",
+        "description": "ScriptId{name='org.jolokia.extra.addon.scripting.test.VersionTest', version='1.0.0'} assertion heapMemoryUsageAssertion failed as the check: JexlExpression{'new('java.lang.Double', heap.used) div new('java.lang.Double', heap.max) < heapMemoryUsageThreshold'}' resolved to false: 0.023218376998995673 < 0.01 (meaning that more than 2.321837699899567 % of the heap is used). See http://mywiki.company.com/support/monitoring/healthchecks#heapMemoryUsage for further infos or contact: MM"
+    }}
+}

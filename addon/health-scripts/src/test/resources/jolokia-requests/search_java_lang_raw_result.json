@@ -1,0 +1,22 @@
+{
+    "request": {
+        "mbean": "java.lang:*",
+        "type": "search"
+    },
+    "value": [
+        "java.lang:type=Compilation",
+        "java.lang:type=Memory",
+        "java.lang:name=PS Eden Space,type=MemoryPool",
+        "java.lang:name=PS Survivor Space,type=MemoryPool",
+        "java.lang:name=Code Cache,type=MemoryPool",
+        "java.lang:name=PS MarkSweep,type=GarbageCollector",
+        "java.lang:type=Runtime",
+        "java.lang:name=PS Perm Gen,type=MemoryPool",
+        "java.lang:type=ClassLoading",
+        "java.lang:name=PS Scavenge,type=GarbageCollector",
+        "java.lang:type=OperatingSystem",
+        "java.lang:type=Threading",
+        "java.lang:name=PS Old Gen,type=MemoryPool",
+        "java.lang:name=CodeCacheManager,type=MemoryManager"
+    ]
+}

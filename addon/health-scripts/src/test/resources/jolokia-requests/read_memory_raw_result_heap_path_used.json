@@ -1,0 +1,9 @@
+{
+    "request": {
+        "mbean": "java.lang:type=Memory",
+        "path": "used",
+        "attribute": "HeapMemoryUsage",
+        "type": "read"
+    },
+    "value": 74383560
+}

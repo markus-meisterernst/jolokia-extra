@@ -1,0 +1,37 @@
+{
+    "scriptId": {
+        "name": "org.jolokia.extra.addon.scripting.healthcheck.HeapMemory",
+        "version": "1.0.0"
+    },
+    "meta": {
+        "author": "MM",
+        "description": "check version call through BackendManager",
+        "supportLink" : "http://mywiki.company.com/support/monitoring/healthchecks"
+    },
+    "vars": {"heapMemoryUsageThreshold": 0.8},
+    "collectionItems": [
+        {
+            "var": "version",
+            "type": "version"
+        },
+        {
+            "mbean": "java.lang:type=Memory",
+            "var": "heap",
+            "attribute": "HeapMemoryUsage",
+            "type": "read"
+        }
+    ],
+    "assertions": [{
+        "name": "heapMemoryUsageAssertion",
+        "check": "new('java.lang.Double', heap.used) div new('java.lang.Double', heap.max) < heapMemoryUsageThreshold",
+        "descriptionExpr": "scriptId.toString() + ' assertion ' + assertion.name + ' failed as the check: ' + assertion.check + ' resolved to false: ' + (new('java.lang.Double', heap.used) div new('java.lang.Double', heap.max)) + ' < ' + heapMemoryUsageThreshold + ' (meaning that more than ' + (new('java.lang.Double', heap.used) div new('java.lang.Double', heap.max) * 100) +' % of the heap is used). See ' + meta.supportLink + '#heapMemoryUsage for further infos or contact: ' + meta.author"
+    }],
+    "conditional": {
+        "check": "version.info.product.toLowerCase() == 'jetty' && version.info.version.substring(0,1) == '7'",
+        "description": "Check that the Jetty Version is 7.",
+        "collectionItems": [{
+            "var": "version",
+            "type": "version"
+        }]
+    }
+}

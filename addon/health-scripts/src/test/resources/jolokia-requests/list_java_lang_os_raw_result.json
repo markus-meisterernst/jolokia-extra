@@ -1,0 +1,91 @@
+{
+    "request": {
+        "path": "java.lang/type=OperatingSystem",
+        "type": "list"
+    },
+    "value": {
+        "desc": "Information on the management interface of the MBean",
+        "attr": {
+            "FreePhysicalMemorySize": {
+                "desc": "FreePhysicalMemorySize",
+                "type": "long",
+                "rw": false
+            },
+            "AvailableProcessors": {
+                "desc": "AvailableProcessors",
+                "type": "int",
+                "rw": false
+            },
+            "FreeSwapSpaceSize": {
+                "desc": "FreeSwapSpaceSize",
+                "type": "long",
+                "rw": false
+            },
+            "ProcessCpuLoad": {
+                "desc": "ProcessCpuLoad",
+                "type": "double",
+                "rw": false
+            },
+            "TotalSwapSpaceSize": {
+                "desc": "TotalSwapSpaceSize",
+                "type": "long",
+                "rw": false
+            },
+            "ProcessCpuTime": {
+                "desc": "ProcessCpuTime",
+                "type": "long",
+                "rw": false
+            },
+            "Name": {
+                "desc": "Name",
+                "type": "java.lang.String",
+                "rw": false
+            },
+            "Arch": {
+                "desc": "Arch",
+                "type": "java.lang.String",
+                "rw": false
+            },
+            "SystemLoadAverage": {
+                "desc": "SystemLoadAverage",
+                "type": "double",
+                "rw": false
+            },
+            "OpenFileDescriptorCount": {
+                "desc": "OpenFileDescriptorCount",
+                "type": "long",
+                "rw": false
+            },
+            "MaxFileDescriptorCount": {
+                "desc": "MaxFileDescriptorCount",
+                "type": "long",
+                "rw": false
+            },
+            "TotalPhysicalMemorySize": {
+                "desc": "TotalPhysicalMemorySize",
+                "type": "long",
+                "rw": false
+            },
+            "CommittedVirtualMemorySize": {
+                "desc": "CommittedVirtualMemorySize",
+                "type": "long",
+                "rw": false
+            },
+            "ObjectName": {
+                "desc": "ObjectName",
+                "type": "javax.management.ObjectName",
+                "rw": false
+            },
+            "Version": {
+                "desc": "Version",
+                "type": "java.lang.String",
+                "rw": false
+            },
+            "SystemCpuLoad": {
+                "desc": "SystemCpuLoad",
+                "type": "double",
+                "rw": false
+            }
+        }
+    }
+}
